@@ -1,5 +1,6 @@
 FROM centos:7
 FROM nginx
+RUN yum install unzip
 ADD https://github.com/roboshop-devops-project/frontend/archive/main.zip /tmp
 RUN rm -rf /usr/share/nginx/html/*
 RUN unzip /tmp/main.zip
