@@ -1,4 +1,4 @@
-FROM centos:7
+FROM rhel7:latest
 FROM nginx
 USER root
 RUN yum -y update
