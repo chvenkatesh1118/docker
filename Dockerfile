@@ -1,4 +1,4 @@
-FROM rhel7:latest
+FROM centos:7
 FROM nginx
 USER root
 RUN yum -y update
@@ -6,4 +6,5 @@ RUN yum -y update
 #RUN rm -rf /usr/share/nginx/html/*
 #RUN mv /tmp/frontend/frontend-main/* /usr/share/nginx/html
 #RUN mv /tmp/frontend/static/* /usr/share/nginx/html
-CMD ["nginx", "-g", "daemon off;"]
+#CMD ["nginx", "-g", "daemon off;"]
+CMD [ "python", "./my_script.py" ]
