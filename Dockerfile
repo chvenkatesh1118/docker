@@ -1,10 +1,7 @@
 FROM centos:7
-FROM nginx
-USER root
-RUN yum -y update
-#RUN git clone https://github.com/roboshop-devops-project/frontend.git /tmp
-#RUN rm -rf /usr/share/nginx/html/*
-#RUN mv /tmp/frontend/frontend-main/* /usr/share/nginx/html
-#RUN mv /tmp/frontend/static/* /usr/share/nginx/html
-#CMD ["nginx", "-g", "daemon off;"]
-CMD [ "python", "./my_script.py" ]
+FROM openjdk:8
+FROM tomcat:8
+ADD https://chantich1.s3.amazonaws.com/JavaHelloWorldApp.1.war /tmp
+RUN cp  /tmp/*.war /usr/local/tomcat/webapps
+EXPOSE 8080
+CMD ["catalina.sh", "run"]
