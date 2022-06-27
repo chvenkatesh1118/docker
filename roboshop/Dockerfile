@@ -5,6 +5,7 @@ RUN  curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project
 WORKDIR /usr/share
 RUN chmod +rwx nginx
 RUN rm -rf *
+RUN yum install unzip
 RUN unzip /tmp/frontend.zip
 RUN mv frontend-main/* .
 RUN mv static/* .
