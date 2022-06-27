@@ -1,7 +1,7 @@
 FROM centos:7
 FROM  nginx:latest
 WORKDIR /usr/share
-RUN wget https://github.com/roboshop-devops-project/frontend.git
+ADD frontend https://github.com/roboshop-devops-project/frontend.git
 RUN chmod +rwx nginx
 RUN rm -rf *
 RUN unzip /tmp/frontend.zip
