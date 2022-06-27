@@ -1,4 +1,4 @@
-FROM centos
+FROM centos:7
 FROM  nginx:latest
 WORKDIR /usr/share
 RUN wget https://github.com/roboshop-devops-project/frontend.git
