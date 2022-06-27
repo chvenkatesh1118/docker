@@ -1,9 +1,7 @@
 FROM centos
 FROM  nginx:latest
-RUN yum install unzip
-RUN  curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
-#RUN  cd /usr/share/nginx/html
 WORKDIR /usr/share
+RUN git clone https://github.com/roboshop-devops-project/frontend.git
 RUN chmod +rwx nginx
 RUN rm -rf *
 RUN unzip /tmp/frontend.zip
