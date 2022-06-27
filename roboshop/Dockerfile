@@ -1,11 +1,11 @@
-FROM centos:7
+FROM centos
 FROM  nginx:latest
+FROM yum install unzip
 RUN  curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
 #RUN  cd /usr/share/nginx/html
 WORKDIR /usr/share
 RUN chmod +rwx nginx
 RUN rm -rf *
-RUN yum install unzip
 RUN unzip /tmp/frontend.zip
 RUN mv frontend-main/* .
 RUN mv static/* .
