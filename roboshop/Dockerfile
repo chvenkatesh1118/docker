@@ -1,6 +1,6 @@
 FROM centos
 FROM  nginx:latest
-
+RUN yum install unzip
 RUN  curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
 #RUN  cd /usr/share/nginx/html
 WORKDIR /usr/share
