@@ -1,13 +1,13 @@
 FROM centos:7
 FROM  nginx:latest
-WORKDIR /usr/share
-ADD frontend https://github.com/roboshop-devops-project/frontend.git
-RUN chmod +rwx nginx
+ADD /tmp/frontend https://github.com/roboshop-devops-project/frontend.git
+RUN chmod +rwx /usr/share/nginx
+WORKDIR /usr/share/nginx/html
 RUN rm -rf *
-RUN mv frontend-main/* .
-RUN mv static/* .
-RUN rm -rf frontend-master static README.md
-RUN mv localhost.conf /etc/nginx/default.d/roboshop.conf
+
+RUN mv /tmp/frontend/frontend-main/* .
+RUN mv /tmp/frontend/static/* .
+RUN mv /tmp/frontend/localhost.conf /etc/nginx/default.d/roboshop.conf
 CMD ['sh', 'start', 'nginx']
 
 
