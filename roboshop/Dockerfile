@@ -1,5 +1,6 @@
 FROM centos:7
 FROM  nginx:latest
+RUN mkdir /tmp/frontend
 ADD /tmp/frontend https://github.com/roboshop-devops-project/frontend.git
 RUN chmod +rwx /usr/share/nginx
 WORKDIR /usr/share/nginx/html
