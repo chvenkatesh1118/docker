@@ -3,7 +3,7 @@ FROM  nginx:latest
 WORKDIR /tmp/
 ADD frontend https://github.com/roboshop-devops-project/frontend.git
 RUN chmod +rwx /usr/share/nginx
-WORKDIR /usr/share/nginx/html
+WORKDIR /usr/share/nginx/html/
 RUN rm -rf *
 WORKDIR /tmp/
 #RUN mv /tmp/frontend/frontend-main/* .
