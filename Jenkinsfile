@@ -7,5 +7,9 @@ pipeline {
 
           }
         }
+      stage('push image') {
+              steps {
+                sh 'docker build -t myapp1 .'
+
      }
  }
