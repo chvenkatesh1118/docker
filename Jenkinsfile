@@ -9,7 +9,7 @@ agent any
 //    }
    environment {
 
-           COMPONENT = 'sqlite'
+           COMPONENT = 'frontend'
      }
 
  stages{
