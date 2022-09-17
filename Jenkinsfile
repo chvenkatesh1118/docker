@@ -9,7 +9,7 @@ agent any
 //    }
    environment {
 
-           COMPONENT = 'frontend'
+           COMPONENT = 'mongodb'
      }
 
  stages{
